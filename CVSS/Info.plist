@@ -51,5 +51,20 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SFCompactText-Bold.otf</string>
+		<string>SFCompactText-BoldItalic.otf</string>
+		<string>SFCompactText-Heavy.otf</string>
+		<string>SFCompactText-HeavyItalic.otf</string>
+		<string>SFCompactText-Light.otf</string>
+		<string>SFCompactText-LightItalic.otf</string>
+		<string>SFCompactText-Medium.otf</string>
+		<string>SFCompactText-MediumItalic.otf</string>
+		<string>SFCompactText-Regular.otf</string>
+		<string>SFCompactText-RegularItalic.otf</string>
+		<string>SFCompactText-Semibold.otf</string>
+		<string>SFCompactText-SemiboldItalic.otf</string>
+	</array>
 </dict>
 </plist>

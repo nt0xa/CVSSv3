@@ -8,13 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		9C562BA22095098A00EAF473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BA12095098A00EAF473 /* AppDelegate.swift */; };
-		9C562BA42095098A00EAF473 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BA32095098A00EAF473 /* FirstViewController.swift */; };
-		9C562BA62095098A00EAF473 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BA52095098A00EAF473 /* SecondViewController.swift */; };
+		9C562BA42095098A00EAF473 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BA32095098A00EAF473 /* BaseViewController.swift */; };
+		9C562BA62095098A00EAF473 /* TemporalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BA52095098A00EAF473 /* TemporalViewController.swift */; };
 		9C562BA92095098A00EAF473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BA72095098A00EAF473 /* Main.storyboard */; };
 		9C562BAB2095098B00EAF473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BAA2095098B00EAF473 /* Assets.xcassets */; };
 		9C562BAE2095098B00EAF473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BAC2095098B00EAF473 /* LaunchScreen.storyboard */; };
 		9C562BB92095098B00EAF473 /* CVSSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BB82095098B00EAF473 /* CVSSTests.swift */; };
 		9C562BC42095098B00EAF473 /* CVSSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BC32095098B00EAF473 /* CVSSUITests.swift */; };
+		9C562BD22095C0F800EAF473 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BD12095C0F800EAF473 /* TabBarViewController.swift */; };
+		9C562BD42095C18A00EAF473 /* CVSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BD32095C18A00EAF473 /* CVSS.swift */; };
+		9C562BDA2095CB5100EAF473 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BD92095CB5100EAF473 /* ResultViewController.swift */; };
+		9C562BDC2095D57C00EAF473 /* UICircularProgressRing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */; };
+		9C562BDD2095D57C00EAF473 /* UICircularProgressRing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C562BEE2095D85600EAF473 /* SFCompactText-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE22095D85300EAF473 /* SFCompactText-RegularItalic.otf */; };
+		9C562BEF2095D85600EAF473 /* SFCompactText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE32095D85400EAF473 /* SFCompactText-Bold.otf */; };
+		9C562BF02095D85600EAF473 /* SFCompactText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE42095D85400EAF473 /* SFCompactText-Semibold.otf */; };
+		9C562BF12095D85600EAF473 /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE52095D85400EAF473 /* SFCompactText-SemiboldItalic.otf */; };
+		9C562BF22095D85600EAF473 /* SFCompactText-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE62095D85400EAF473 /* SFCompactText-Heavy.otf */; };
+		9C562BF32095D85600EAF473 /* SFCompactText-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE72095D85500EAF473 /* SFCompactText-BoldItalic.otf */; };
+		9C562BF42095D85600EAF473 /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE82095D85500EAF473 /* SFCompactText-Medium.otf */; };
+		9C562BF52095D85600EAF473 /* SFCompactText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE92095D85500EAF473 /* SFCompactText-Light.otf */; };
+		9C562BF62095D85600EAF473 /* SFCompactText-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BEA2095D85500EAF473 /* SFCompactText-MediumItalic.otf */; };
+		9C562BF72095D85600EAF473 /* SFCompactText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BEB2095D85600EAF473 /* SFCompactText-Regular.otf */; };
+		9C562BF82095D85600EAF473 /* SFCompactText-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BEC2095D85600EAF473 /* SFCompactText-LightItalic.otf */; };
+		9C562BF92095D85600EAF473 /* SFCompactText-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BED2095D85600EAF473 /* SFCompactText-HeavyItalic.otf */; };
+		9C562BFB2096452B00EAF473 /* ResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BFA2096452B00EAF473 /* ResultDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +52,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9C562BDE2095D57C00EAF473 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9C562BDD2095D57C00EAF473 /* UICircularProgressRing.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9C562B9E2095098A00EAF473 /* CVSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C562BA12095098A00EAF473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C562BA32095098A00EAF473 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9C562BA52095098A00EAF473 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9C562BA32095098A00EAF473 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9C562BA52095098A00EAF473 /* TemporalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalViewController.swift; sourceTree = "<group>"; };
 		9C562BA82095098A00EAF473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C562BAA2095098B00EAF473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C562BAD2095098B00EAF473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +81,24 @@
 		9C562BBF2095098B00EAF473 /* CVSSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVSSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C562BC32095098B00EAF473 /* CVSSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSSUITests.swift; sourceTree = "<group>"; };
 		9C562BC52095098B00EAF473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C562BD12095C0F800EAF473 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		9C562BD32095C18A00EAF473 /* CVSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSS.swift; sourceTree = "<group>"; };
+		9C562BD52095CAA100EAF473 /* UICircularProgressRing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICircularProgressRing.framework; path = Carthage/Build/iOS/UICircularProgressRing.framework; sourceTree = "<group>"; };
+		9C562BD92095CB5100EAF473 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICircularProgressRing.framework; path = Carthage/Build/iOS/UICircularProgressRing.framework; sourceTree = "<group>"; };
+		9C562BE22095D85300EAF473 /* SFCompactText-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-RegularItalic.otf"; sourceTree = "<group>"; };
+		9C562BE32095D85400EAF473 /* SFCompactText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Bold.otf"; sourceTree = "<group>"; };
+		9C562BE42095D85400EAF473 /* SFCompactText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Semibold.otf"; sourceTree = "<group>"; };
+		9C562BE52095D85400EAF473 /* SFCompactText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		9C562BE62095D85400EAF473 /* SFCompactText-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Heavy.otf"; sourceTree = "<group>"; };
+		9C562BE72095D85500EAF473 /* SFCompactText-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-BoldItalic.otf"; sourceTree = "<group>"; };
+		9C562BE82095D85500EAF473 /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
+		9C562BE92095D85500EAF473 /* SFCompactText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Light.otf"; sourceTree = "<group>"; };
+		9C562BEA2095D85500EAF473 /* SFCompactText-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-MediumItalic.otf"; sourceTree = "<group>"; };
+		9C562BEB2095D85600EAF473 /* SFCompactText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Regular.otf"; sourceTree = "<group>"; };
+		9C562BEC2095D85600EAF473 /* SFCompactText-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-LightItalic.otf"; sourceTree = "<group>"; };
+		9C562BED2095D85600EAF473 /* SFCompactText-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-HeavyItalic.otf"; sourceTree = "<group>"; };
+		9C562BFA2096452B00EAF473 /* ResultDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C562BDC2095D57C00EAF473 /* UICircularProgressRing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +130,8 @@
 		9C562B952095098A00EAF473 = {
 			isa = PBXGroup;
 			children = (
+				9C562BD52095CAA100EAF473 /* UICircularProgressRing.framework */,
+				9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */,
 				9C562BA02095098A00EAF473 /* CVSS */,
 				9C562BB72095098B00EAF473 /* CVSSTests */,
 				9C562BC22095098B00EAF473 /* CVSSUITests */,
@@ -99,9 +152,14 @@
 		9C562BA02095098A00EAF473 /* CVSS */ = {
 			isa = PBXGroup;
 			children = (
+				9C562BDF2095D81D00EAF473 /* Resources */,
 				9C562BA12095098A00EAF473 /* AppDelegate.swift */,
-				9C562BA32095098A00EAF473 /* FirstViewController.swift */,
-				9C562BA52095098A00EAF473 /* SecondViewController.swift */,
+				9C562BD12095C0F800EAF473 /* TabBarViewController.swift */,
+				9C562BD92095CB5100EAF473 /* ResultViewController.swift */,
+				9C562BFA2096452B00EAF473 /* ResultDelegate.swift */,
+				9C562BA32095098A00EAF473 /* BaseViewController.swift */,
+				9C562BA52095098A00EAF473 /* TemporalViewController.swift */,
+				9C562BD32095C18A00EAF473 /* CVSS.swift */,
 				9C562BA72095098A00EAF473 /* Main.storyboard */,
 				9C562BAA2095098B00EAF473 /* Assets.xcassets */,
 				9C562BAC2095098B00EAF473 /* LaunchScreen.storyboard */,
@@ -128,6 +186,41 @@
 			path = CVSSUITests;
 			sourceTree = "<group>";
 		};
+		9C562BDF2095D81D00EAF473 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C562BE02095D82400EAF473 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9C562BE02095D82400EAF473 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9C562BE12095D82B00EAF473 /* SFCompact */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9C562BE12095D82B00EAF473 /* SFCompact */ = {
+			isa = PBXGroup;
+			children = (
+				9C562BE32095D85400EAF473 /* SFCompactText-Bold.otf */,
+				9C562BE72095D85500EAF473 /* SFCompactText-BoldItalic.otf */,
+				9C562BE62095D85400EAF473 /* SFCompactText-Heavy.otf */,
+				9C562BED2095D85600EAF473 /* SFCompactText-HeavyItalic.otf */,
+				9C562BE92095D85500EAF473 /* SFCompactText-Light.otf */,
+				9C562BEC2095D85600EAF473 /* SFCompactText-LightItalic.otf */,
+				9C562BE82095D85500EAF473 /* SFCompactText-Medium.otf */,
+				9C562BEA2095D85500EAF473 /* SFCompactText-MediumItalic.otf */,
+				9C562BEB2095D85600EAF473 /* SFCompactText-Regular.otf */,
+				9C562BE22095D85300EAF473 /* SFCompactText-RegularItalic.otf */,
+				9C562BE42095D85400EAF473 /* SFCompactText-Semibold.otf */,
+				9C562BE52095D85400EAF473 /* SFCompactText-SemiboldItalic.otf */,
+			);
+			path = SFCompact;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +231,7 @@
 				9C562B9A2095098A00EAF473 /* Sources */,
 				9C562B9B2095098A00EAF473 /* Frameworks */,
 				9C562B9C2095098A00EAF473 /* Resources */,
+				9C562BDE2095D57C00EAF473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,9 +326,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C562BF82095D85600EAF473 /* SFCompactText-LightItalic.otf in Resources */,
+				9C562BF02095D85600EAF473 /* SFCompactText-Semibold.otf in Resources */,
+				9C562BF12095D85600EAF473 /* SFCompactText-SemiboldItalic.otf in Resources */,
+				9C562BF92095D85600EAF473 /* SFCompactText-HeavyItalic.otf in Resources */,
+				9C562BF62095D85600EAF473 /* SFCompactText-MediumItalic.otf in Resources */,
+				9C562BEE2095D85600EAF473 /* SFCompactText-RegularItalic.otf in Resources */,
+				9C562BF32095D85600EAF473 /* SFCompactText-BoldItalic.otf in Resources */,
 				9C562BAE2095098B00EAF473 /* LaunchScreen.storyboard in Resources */,
+				9C562BF52095D85600EAF473 /* SFCompactText-Light.otf in Resources */,
+				9C562BEF2095D85600EAF473 /* SFCompactText-Bold.otf in Resources */,
+				9C562BF42095D85600EAF473 /* SFCompactText-Medium.otf in Resources */,
+				9C562BF22095D85600EAF473 /* SFCompactText-Heavy.otf in Resources */,
 				9C562BAB2095098B00EAF473 /* Assets.xcassets in Resources */,
 				9C562BA92095098A00EAF473 /* Main.storyboard in Resources */,
+				9C562BF72095D85600EAF473 /* SFCompactText-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +365,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C562BA62095098A00EAF473 /* SecondViewController.swift in Sources */,
+				9C562BD22095C0F800EAF473 /* TabBarViewController.swift in Sources */,
+				9C562BA62095098A00EAF473 /* TemporalViewController.swift in Sources */,
 				9C562BA22095098A00EAF473 /* AppDelegate.swift in Sources */,
-				9C562BA42095098A00EAF473 /* FirstViewController.swift in Sources */,
+				9C562BFB2096452B00EAF473 /* ResultDelegate.swift in Sources */,
+				9C562BA42095098A00EAF473 /* BaseViewController.swift in Sources */,
+				9C562BD42095C18A00EAF473 /* CVSS.swift in Sources */,
+				9C562BDA2095CB5100EAF473 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +546,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8N7UU45L6B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CVSS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +568,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8N7UU45L6B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CVSS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
