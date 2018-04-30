@@ -40,7 +40,7 @@ class BaseViewController: UIViewController {
     
     @IBAction func attackVectorValueChanged(_ sender: UISegmentedControl) {
         cvss.attackVector = CVSS.AttackVector(rawValue: sender.selectedSegmentIndex)!
-        updateResult()
+        updateResult(animated: true)
     }
     
     @IBAction func attackComplexityValueChanged(_ sender: UISegmentedControl) {
