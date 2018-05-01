@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -302,9 +303,8 @@
                                                 <rect key="frame" x="0.0" y="27" width="343" height="29"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nbK-aD-foQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="440" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="429" height="29"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="440" id="iaQ-LE-AX6"/>
                                                             <constraint firstAttribute="height" constant="28" id="sQM-as-AbJ"/>
                                                         </constraints>
                                                         <segments>
@@ -342,9 +342,8 @@
                                                 <rect key="frame" x="0.0" y="95" width="343" height="29"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y8f-aR-jrh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="444" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="429" height="29"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="440" id="PKp-Oh-UzT"/>
                                                             <constraint firstAttribute="height" constant="28" id="RiE-eU-ubd"/>
                                                         </constraints>
                                                         <segments>
@@ -395,6 +394,10 @@
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="nbK-aD-foQ" firstAttribute="width" secondItem="ipk-Yj-cmk" secondAttribute="width" multiplier="5:4" id="o2p-Jh-reQ"/>
+                                            <constraint firstItem="Y8f-aR-jrh" firstAttribute="width" secondItem="ipk-Yj-cmk" secondAttribute="width" multiplier="5:4" id="u9v-l1-103"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
