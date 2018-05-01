@@ -10,6 +10,10 @@ import Foundation
 
 class CVSS {
     
+    //
+    // Base score
+    //
+    
     enum AttackVector: Int, CustomStringConvertible {
         case network
         case adjacent
@@ -215,6 +219,119 @@ class CVSS {
         }
     }
     
+    //
+    // Temporary score
+    //
+    
+    enum ExploitCodeMaturity: Int, CustomStringConvertible {
+        case notDefined
+        case unproven
+        case poc
+        case functional
+        case high
+        
+        func value() -> Float {
+            switch self {
+            case .notDefined:
+                return 1
+            case .unproven:
+                return 0.91
+            case .poc:
+                return 0.94
+            case .functional:
+                return 0.97
+            case .high:
+                return 1
+            }
+        }
+        
+        var description: String {
+            switch self {
+            case .notDefined:
+                return ""
+            case .unproven:
+                return "E:U"
+            case .poc:
+                return "E:P"
+            case .functional:
+                return "E:F"
+            case .high:
+                return "E:H"
+            }
+        }
+    }
+    
+    enum RemediationLevel: Int, CustomStringConvertible {
+        case notDefined
+        case officalFix
+        case temporaryFix
+        case workaround
+        case unavailable
+        
+        func value() -> Float {
+            switch self {
+            case .notDefined:
+                return 1
+            case .officalFix:
+                return 0.95
+            case .temporaryFix:
+                return 0.96
+            case .workaround:
+                return 0.97
+            case .unavailable:
+                return 1
+            }
+        }
+        
+        var description: String {
+            switch self {
+            case .notDefined:
+                return ""
+            case .unavailable:
+                return "RL:U"
+            case .workaround:
+                return "RL:W"
+            case .temporaryFix:
+                return "RL:T"
+            case .officalFix:
+                return "RL:O"
+            }
+        }
+    }
+    
+    enum ReportConfidence: Int, CustomStringConvertible {
+        case notDefined
+        case unknown
+        case resonable
+        case confirmed
+
+        func value() -> Float {
+            switch self {
+            case .notDefined:
+                return 1
+            case .unknown:
+                return 0.92
+            case .resonable:
+                return 0.96
+            case .confirmed:
+                return 1
+            }
+        }
+        
+        var description: String {
+            switch self {
+            case .notDefined:
+                return ""
+            case .confirmed:
+                return "RC:C"
+            case .resonable:
+                return "RC:R"
+            case .unknown:
+                return "RC:U"
+            }
+        }
+    }
+    
     enum Severity: CustomStringConvertible {
         case none
         case low
@@ -252,6 +369,7 @@ class CVSS {
         }
     }
     
+    // Base
     var attackVector: AttackVector = .network
     var attackComplexity: AttackComplexity = .low
     var privilegeRequired: PrivilegeRequired = .none
@@ -261,24 +379,32 @@ class CVSS {
     var integrity: Integrity = .none
     var availability: Availability = .none
     
+    // Temporal
+    var exploitCodeMaturity: ExploitCodeMaturity = .notDefined
+    var remediationLevel: RemediationLevel = .notDefined
+    var reportConfidence: ReportConfidence = .notDefined
+    
     class func roundUp(_ value: Float) -> Float {
         return (value * 10).rounded(.up) / 10
     }
     
     func severity() -> Severity {
-        return Severity.fromScore(score())
+        return Severity.fromScore(baseScore())
     }
     
     func toVector() -> String {
         let mirror = Mirror(reflecting: self)
         var vector = ""
         for attr in mirror.children {
-            vector += "/\(attr.value)"
+            let value = "/\(attr.value)"
+            if !value.isEmpty {
+                vector += value
+            }
         }
         return vector
     }
     
-    func score() -> Float {
+    func baseScore() -> Float {
         let iscBase = 1 - ((1 - confidentiality.value()) * (1 - integrity.value()) * (1 - availability.value()))
         
         var isc: Float
@@ -302,6 +428,10 @@ class CVSS {
         case .changed:
             return CVSS.roundUp(min(1.08 * (isc + esc), 10))
         }
+    }
+    
+    func temporalScore() -> Float {
+        return CVSS.roundUp(baseScore() * exploitCodeMaturity.value() * remediationLevel.value() * reportConfidence.value())
     }
 }
 

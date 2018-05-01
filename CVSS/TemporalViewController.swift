@@ -10,6 +10,10 @@ import UIKit
 
 class TemporalViewController: UIViewController {
     
+    @IBOutlet weak var exploitCodeMaturity: UISegmentedControl!
+    @IBOutlet weak var remediationLevel: UISegmentedControl!
+    @IBOutlet weak var reportConfidence: UISegmentedControl!
+    
     var cvss: CVSS {
         get {
             return (self.tabBarController as! TabBarViewController).cvss
@@ -29,7 +33,22 @@ class TemporalViewController: UIViewController {
     }
     
     private func updateResult(animated: Bool) {
-        result?.update(score: cvss.score(), severity: cvss.severity().description, animated: animated)
+        result?.update(score: cvss.temporalScore(), severity: cvss.severity().description, animated: animated)
+    }
+    
+    @IBAction func exploitCodeMaturityValueChanged(_ sender: UISegmentedControl) {
+        cvss.exploitCodeMaturity = CVSS.ExploitCodeMaturity(rawValue: sender.selectedSegmentIndex)!
+        updateResult(animated: true)
+    }
+    
+    @IBAction func remediationLevelValueChanged(_ sender: UISegmentedControl) {
+        cvss.remediationLevel = CVSS.RemediationLevel(rawValue: sender.selectedSegmentIndex)!
+        updateResult(animated: true)
+    }
+    
+    @IBAction func reportConfidenceValueChanged(_ sender: UISegmentedControl) {
+        cvss.reportConfidence = CVSS.ReportConfidence(rawValue: sender.selectedSegmentIndex)!
+        updateResult(animated: true)
     }
 }
 

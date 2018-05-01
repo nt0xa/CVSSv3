@@ -35,7 +35,7 @@ class BaseViewController: UIViewController {
     }
     
     private func updateResult(animated: Bool) {
-        result?.update(score: cvss.score(), severity: cvss.severity().description, animated: animated)
+        result?.update(score: cvss.baseScore(), severity: cvss.severity().description, animated: animated)
     }
     
     @IBAction func attackVectorValueChanged(_ sender: UISegmentedControl) {

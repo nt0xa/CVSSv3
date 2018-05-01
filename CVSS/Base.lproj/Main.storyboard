@@ -317,6 +317,7 @@
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="attackVectorValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="qX4-pu-5h2"/>
+                                                            <action selector="exploitCodeMaturityValueChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="mW5-ae-bzK"/>
                                                         </connections>
                                                     </segmentedControl>
                                                 </subviews>
@@ -356,6 +357,7 @@
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="attackComplexityValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="cjq-g3-Gks"/>
+                                                            <action selector="remediationLevelValueChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="ouM-NB-Icy"/>
                                                         </connections>
                                                     </segmentedControl>
                                                 </subviews>
@@ -391,6 +393,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="privilegeRequiredValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="tEE-61-SpW"/>
+                                                    <action selector="reportConfidenceValueChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="lWn-7K-1Vd"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
@@ -422,6 +425,11 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Temporal" image="temporal" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="exploitCodeMaturity" destination="nbK-aD-foQ" id="OQ1-5z-5jX"/>
+                        <outlet property="remediationLevel" destination="Y8f-aR-jrh" id="c2n-Re-hDB"/>
+                        <outlet property="reportConfidence" destination="ipk-Yj-cmk" id="dYf-vr-Oh2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -860,6 +868,6 @@
         <image name="temporal" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wMf-mT-ESV"/>
+        <segue reference="gUR-L5-MhB"/>
     </inferredMetricsTieBreakers>
 </document>
