@@ -287,7 +287,7 @@
                                 <rect key="frame" x="0.0" y="170" width="375" height="448"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Slx-Zx-YK2">
-                                        <rect key="frame" x="16" y="0.0" width="343" height="189"/>
+                                        <rect key="frame" x="16" y="0.0" width="343" height="191"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exploit Code Maturity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysg-OL-xcU">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="15"/>
@@ -298,25 +298,39 @@
                                                 <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nbK-aD-foQ">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXz-oE-MVx">
                                                 <rect key="frame" x="0.0" y="27" width="343" height="29"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nbK-aD-foQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="440" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="440" id="iaQ-LE-AX6"/>
+                                                            <constraint firstAttribute="height" constant="28" id="sQM-as-AbJ"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="N/D"/>
+                                                            <segment title="Unproven"/>
+                                                            <segment title="PoC"/>
+                                                            <segment title="Functional"/>
+                                                            <segment title="High"/>
+                                                        </segments>
+                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="attackVectorValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="qX4-pu-5h2"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="sQM-as-AbJ"/>
+                                                    <constraint firstAttribute="height" constant="29" id="07l-tP-NmX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nbK-aD-foQ" secondAttribute="trailing" id="5aX-Fv-Ule"/>
+                                                    <constraint firstItem="nbK-aD-foQ" firstAttribute="top" secondItem="vXz-oE-MVx" secondAttribute="top" id="71L-If-9fr"/>
+                                                    <constraint firstItem="nbK-aD-foQ" firstAttribute="width" secondItem="vXz-oE-MVx" secondAttribute="width" priority="500" id="B7x-ay-PCS"/>
+                                                    <constraint firstItem="nbK-aD-foQ" firstAttribute="leading" secondItem="vXz-oE-MVx" secondAttribute="leading" id="Ntg-1f-yXN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nbK-aD-foQ" secondAttribute="bottom" id="xsl-fX-T7k"/>
                                                 </constraints>
-                                                <segments>
-                                                    <segment title="N/D"/>
-                                                    <segment title="Unproven"/>
-                                                    <segment title="PoC"/>
-                                                    <segment title="Functional"/>
-                                                    <segment title="High"/>
-                                                </segments>
-                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <action selector="attackVectorValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="qX4-pu-5h2"/>
-                                                </connections>
-                                            </segmentedControl>
+                                            </scrollView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remediation Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-Fj-aSH">
-                                                <rect key="frame" x="0.0" y="67" width="343" height="15"/>
+                                                <rect key="frame" x="0.0" y="68" width="343" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="L7R-cm-eiM"/>
                                                 </constraints>
@@ -324,25 +338,39 @@
                                                 <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y8f-aR-jrh">
-                                                <rect key="frame" x="0.0" y="94" width="343" height="29"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJj-zd-AsY">
+                                                <rect key="frame" x="0.0" y="95" width="343" height="29"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y8f-aR-jrh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="444" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="440" id="PKp-Oh-UzT"/>
+                                                            <constraint firstAttribute="height" constant="28" id="RiE-eU-ubd"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="N/D"/>
+                                                            <segment title="Official Fix"/>
+                                                            <segment title="Temp Fix"/>
+                                                            <segment title="Workaround"/>
+                                                            <segment title="Unavaliable"/>
+                                                        </segments>
+                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="attackComplexityValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="cjq-g3-Gks"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="RiE-eU-ubd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Y8f-aR-jrh" secondAttribute="bottom" id="8Ni-Qf-1fR"/>
+                                                    <constraint firstItem="Y8f-aR-jrh" firstAttribute="width" secondItem="MJj-zd-AsY" secondAttribute="width" priority="500" id="Gay-kH-YYW"/>
+                                                    <constraint firstItem="Y8f-aR-jrh" firstAttribute="leading" secondItem="MJj-zd-AsY" secondAttribute="leading" id="RFC-Ln-OuJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Y8f-aR-jrh" secondAttribute="trailing" id="Uw5-6g-rfb"/>
+                                                    <constraint firstItem="Y8f-aR-jrh" firstAttribute="top" secondItem="MJj-zd-AsY" secondAttribute="top" id="cSF-Dc-6Gz"/>
+                                                    <constraint firstAttribute="height" constant="29" id="y2l-N7-Y3B"/>
                                                 </constraints>
-                                                <segments>
-                                                    <segment title="N/D"/>
-                                                    <segment title="Official Fix"/>
-                                                    <segment title="Temp Fix"/>
-                                                    <segment title="Workaround"/>
-                                                    <segment title="Unavaliable"/>
-                                                </segments>
-                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <action selector="attackComplexityValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="cjq-g3-Gks"/>
-                                                </connections>
-                                            </segmentedControl>
+                                            </scrollView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6y-Xw-Hat">
-                                                <rect key="frame" x="0.0" y="134" width="343" height="15"/>
+                                                <rect key="frame" x="0.0" y="136" width="343" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="6B7-l5-PMV"/>
                                                 </constraints>
@@ -351,7 +379,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ipk-Yj-cmk">
-                                                <rect key="frame" x="0.0" y="161" width="343" height="29"/>
+                                                <rect key="frame" x="0.0" y="163" width="343" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="k93-mv-V8q"/>
                                                 </constraints>
