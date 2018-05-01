@@ -83,7 +83,6 @@
 		9C562BC52095098B00EAF473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C562BD12095C0F800EAF473 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9C562BD32095C18A00EAF473 /* CVSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSS.swift; sourceTree = "<group>"; };
-		9C562BD52095CAA100EAF473 /* UICircularProgressRing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICircularProgressRing.framework; path = Carthage/Build/iOS/UICircularProgressRing.framework; sourceTree = "<group>"; };
 		9C562BD92095CB5100EAF473 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICircularProgressRing.framework; path = Carthage/Build/iOS/UICircularProgressRing.framework; sourceTree = "<group>"; };
 		9C562BE22095D85300EAF473 /* SFCompactText-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-RegularItalic.otf"; sourceTree = "<group>"; };
@@ -130,7 +129,6 @@
 		9C562B952095098A00EAF473 = {
 			isa = PBXGroup;
 			children = (
-				9C562BD52095CAA100EAF473 /* UICircularProgressRing.framework */,
 				9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */,
 				9C562BA02095098A00EAF473 /* CVSS */,
 				9C562BB72095098B00EAF473 /* CVSSTests */,
