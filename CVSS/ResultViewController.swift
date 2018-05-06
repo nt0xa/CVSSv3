@@ -14,6 +14,8 @@ class ResultViewController: UIViewController, ResultDelegate {
     @IBOutlet weak var scoreView: UICircularProgressRingView!
     @IBOutlet weak var severityLabel: UILabel!
     
+    var vector: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +35,9 @@ class ResultViewController: UIViewController, ResultDelegate {
         scoreView.gradientEndPosition = .bottomRight
     }
     
-    func update(score: Float, severity: String, animated: Bool) {
+    func update(score: Float, severity: String, vector: String, animated: Bool) {
+        self.vector = vector
+        
         scoreView.setProgress(to: CGFloat(score), duration: animated ? 0.4 : 0) {
             self.severityLabel.text = severity
         }

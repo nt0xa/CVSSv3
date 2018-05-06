@@ -127,7 +127,7 @@
                                                     <constraint firstAttribute="height" constant="28" id="3Hk-RP-5Rb"/>
                                                 </constraints>
                                                 <segments>
-                                                    <segment title="Low"/>
+                                                    <segment title="None"/>
                                                     <segment title="Required"/>
                                                 </segments>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -463,7 +463,7 @@
         <!--Enviromental-->
         <scene sceneID="b7w-F1-X2n">
             <objects>
-                <viewController id="FCY-Vi-r2O" sceneMemberID="viewController">
+                <viewController id="FCY-Vi-r2O" customClass="EnvironmentalViewController" customModule="CVSS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qEE-1d-ALa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -506,6 +506,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="attackVectorValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="G58-VW-cfF"/>
+                                                    <action selector="confidentialityRequirementValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="1Lr-K6-Ptr"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Integrity Requirement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCG-ox-3w6">
@@ -531,6 +532,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="attackVectorValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="wrB-jY-G6f"/>
+                                                    <action selector="integrityRequirementValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="bHt-VO-29A"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Availability Requirement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvE-On-xlg">
@@ -556,6 +558,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="attackVectorValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="fKx-qQ-lUL"/>
+                                                    <action selector="availabilityRequirementValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="Wa1-Hp-84M"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modified Attack Vector" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEA-kH-blA">
@@ -573,6 +576,7 @@
                                                     <constraint firstAttribute="height" constant="28" id="Fea-GH-vjX"/>
                                                 </constraints>
                                                 <segments>
+                                                    <segment title="N/D"/>
                                                     <segment title="Network"/>
                                                     <segment title="Adjacent"/>
                                                     <segment title="Local"/>
@@ -581,6 +585,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="attackVectorValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="LnT-5R-w1m"/>
+                                                    <action selector="modifiedAttackVectorValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="5D7-XE-XZc"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modified Attack Complexity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfw-eg-JCn">
@@ -598,12 +603,14 @@
                                                     <constraint firstAttribute="height" constant="28" id="h3K-ps-GUV"/>
                                                 </constraints>
                                                 <segments>
+                                                    <segment title="N/D"/>
                                                     <segment title="Low"/>
                                                     <segment title="High"/>
                                                 </segments>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="attackComplexityValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="GdQ-vH-qa3"/>
+                                                    <action selector="modifiedAttackComplexityValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="pCn-Ga-0v3"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modified Privileges Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgj-Tc-FUW">
@@ -621,12 +628,14 @@
                                                     <constraint firstAttribute="height" constant="28" id="KHc-fW-pO0"/>
                                                 </constraints>
                                                 <segments>
+                                                    <segment title="N/D"/>
                                                     <segment title="None"/>
                                                     <segment title="Low"/>
                                                     <segment title="High"/>
                                                 </segments>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <action selector="modifiedPrivilegeRequiredValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="8Tr-gj-OWq"/>
                                                     <action selector="privilegeRequiredValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="qdg-L0-RgT"/>
                                                 </connections>
                                             </segmentedControl>
@@ -645,11 +654,13 @@
                                                     <constraint firstAttribute="height" constant="28" id="Ltz-nG-Tbp"/>
                                                 </constraints>
                                                 <segments>
-                                                    <segment title="Low"/>
+                                                    <segment title="N/D"/>
+                                                    <segment title="None"/>
                                                     <segment title="Required"/>
                                                 </segments>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <action selector="modifiedUserInteractionValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="WRn-ee-Dfd"/>
                                                     <action selector="userInteractionValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="PfX-OB-QU8"/>
                                                 </connections>
                                             </segmentedControl>
@@ -668,11 +679,13 @@
                                                     <constraint firstAttribute="height" constant="28" id="cjv-nW-jbp"/>
                                                 </constraints>
                                                 <segments>
+                                                    <segment title="N/D"/>
                                                     <segment title="Unchanged"/>
                                                     <segment title="Changed"/>
                                                 </segments>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <action selector="modifiedScopeValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="UZf-9E-gxN"/>
                                                     <action selector="scopeValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="aS6-cj-D8X"/>
                                                 </connections>
                                             </segmentedControl>
@@ -691,6 +704,7 @@
                                                     <constraint firstAttribute="height" constant="28" id="ByF-ez-O7c"/>
                                                 </constraints>
                                                 <segments>
+                                                    <segment title="N/D"/>
                                                     <segment title="None"/>
                                                     <segment title="Low"/>
                                                     <segment title="High"/>
@@ -698,6 +712,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="confidentialityValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="SnO-sX-U3t"/>
+                                                    <action selector="modifiedConfidentialityValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="ElH-Gv-sY1"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modified Integrity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYU-5r-9PZ">
@@ -715,6 +730,7 @@
                                                     <constraint firstAttribute="height" constant="28" id="KTl-9c-qPk"/>
                                                 </constraints>
                                                 <segments>
+                                                    <segment title="N/D"/>
                                                     <segment title="None"/>
                                                     <segment title="Low"/>
                                                     <segment title="High"/>
@@ -722,6 +738,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="integrityValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="FlD-Ds-h6o"/>
+                                                    <action selector="modifiedIntegrityValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="IuI-ps-LWB"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modified Availability" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NN-9P-3BN">
@@ -736,6 +753,7 @@
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3bA-Jd-9Or">
                                                 <rect key="frame" x="0.0" y="697" width="343" height="29"/>
                                                 <segments>
+                                                    <segment title="N/D"/>
                                                     <segment title="None"/>
                                                     <segment title="Low"/>
                                                     <segment title="High"/>
@@ -743,6 +761,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="availabilityValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="NOF-dT-Fgu"/>
+                                                    <action selector="modifiedAvailabilityValueChanged:" destination="FCY-Vi-r2O" eventType="valueChanged" id="WrH-ma-JmE"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
@@ -770,6 +789,19 @@
                         <viewLayoutGuide key="safeArea" id="MTR-kt-LYn"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Enviromental" image="environmental" id="dIN-n5-Kcf"/>
+                    <connections>
+                        <outlet property="availabilityRequirement" destination="Xea-hd-DYd" id="kQk-Py-oWJ"/>
+                        <outlet property="confidentialityRequirement" destination="Ta2-tO-dtX" id="Csg-4z-qr5"/>
+                        <outlet property="integrityRequirement" destination="6PM-6U-gxO" id="JjP-KI-Aen"/>
+                        <outlet property="modifiedAttackComplexity" destination="FVc-l2-4Th" id="uDf-d5-rfT"/>
+                        <outlet property="modifiedAttackVector" destination="AlJ-hQ-Lri" id="meJ-sN-G6a"/>
+                        <outlet property="modifiedAvailavility" destination="3bA-Jd-9Or" id="ex1-5J-gd2"/>
+                        <outlet property="modifiedConfidentiality" destination="C4D-QY-JIa" id="Nhm-oC-Ivb"/>
+                        <outlet property="modifiedIntegrity" destination="07a-Zz-AMf" id="Gbz-Ny-Kj1"/>
+                        <outlet property="modifiedPrivilegeRequired" destination="Gjr-AT-imN" id="qTE-qq-Q8d"/>
+                        <outlet property="modifiedScope" destination="Vjf-9O-pKl" id="iGN-tv-3AP"/>
+                        <outlet property="modifiedUserInteraction" destination="5m7-1F-0EU" id="Blt-Xj-MhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkN-bw-NTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -868,6 +900,6 @@
         <image name="temporal" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Prc-gW-t8q"/>
+        <segue reference="wMf-mT-ESV"/>
     </inferredMetricsTieBreakers>
 </document>

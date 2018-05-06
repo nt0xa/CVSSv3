@@ -7,5 +7,5 @@
 //
 
 protocol ResultDelegate {
-    func update(score: Float, severity: String, animated: Bool)
+    func update(score: Float, severity: String, vector: String, animated: Bool)
 }
