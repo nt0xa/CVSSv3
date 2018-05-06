@@ -34,13 +34,8 @@ class ResultViewController: UIViewController, ResultDelegate {
     }
     
     func update(score: Float, severity: String, animated: Bool) {
-        if animated {
-            scoreView.setProgress(to: CGFloat(score), duration: 0.4) {
-                self.severityLabel.text = severity
-            }
-        } else {
-            scoreView.value = CGFloat(score)
-            severityLabel.text = severity
+        scoreView.setProgress(to: CGFloat(score), duration: animated ? 0.4 : 0) {
+            self.severityLabel.text = severity
         }
     }
 }

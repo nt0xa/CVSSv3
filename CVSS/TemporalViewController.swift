@@ -33,21 +33,29 @@ class TemporalViewController: UIViewController {
     }
     
     private func updateResult(animated: Bool) {
-        result?.update(score: cvss.temporalScore(), severity: cvss.severity().description, animated: animated)
+        let score = cvss.temporalScore()
+        result?.update(
+            score: score,
+            severity: CVSS.Severity.fromScore(score).description,
+            animated: animated
+        )
     }
     
     @IBAction func exploitCodeMaturityValueChanged(_ sender: UISegmentedControl) {
-        cvss.exploitCodeMaturity = CVSS.ExploitCodeMaturity(rawValue: sender.selectedSegmentIndex)!
+        cvss.exploitCodeMaturity = CVSS.ExploitCodeMaturity(
+            rawValue: sender.selectedSegmentIndex - 1)!
         updateResult(animated: true)
     }
     
     @IBAction func remediationLevelValueChanged(_ sender: UISegmentedControl) {
-        cvss.remediationLevel = CVSS.RemediationLevel(rawValue: sender.selectedSegmentIndex)!
+        cvss.remediationLevel = CVSS.RemediationLevel(
+            rawValue: sender.selectedSegmentIndex - 1)!
         updateResult(animated: true)
     }
     
     @IBAction func reportConfidenceValueChanged(_ sender: UISegmentedControl) {
-        cvss.reportConfidence = CVSS.ReportConfidence(rawValue: sender.selectedSegmentIndex)!
+        cvss.reportConfidence = CVSS.ReportConfidence(
+            rawValue: sender.selectedSegmentIndex - 1)!
         updateResult(animated: true)
     }
 }

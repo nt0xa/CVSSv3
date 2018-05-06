@@ -20,12 +20,16 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var integrity: UISegmentedControl!
     @IBOutlet weak var availavility: UISegmentedControl!
     
-    var result: ResultDelegate?
-    
     var cvss: CVSS {
         get {
             return (self.tabBarController as! TabBarViewController).cvss
         }
+    }
+    
+    var result: ResultDelegate?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateResult(animated: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,7 +39,12 @@ class BaseViewController: UIViewController {
     }
     
     private func updateResult(animated: Bool) {
-        result?.update(score: cvss.baseScore(), severity: cvss.severity().description, animated: animated)
+        let score = cvss.baseScore()
+        result?.update(
+            score: score,
+            severity: CVSS.Severity.fromScore(score).description,
+            animated: animated
+        )
     }
     
     @IBAction func attackVectorValueChanged(_ sender: UISegmentedControl) {
