@@ -46,20 +46,24 @@ class EnvironmentalViewController: UIViewController {
         result?.update(
             score: score,
             severity: CVSS.Severity.fromScore(score).description,
+            vector: cvss.description,
             animated: animated
         )
     }
     
     @IBAction func confidentialityRequirementValueChanged(_ sender: UISegmentedControl) {
         cvss.confidentialityRequirement = CVSS.ConfidentialityRequirement(rawValue: sender.selectedSegmentIndex - 1)
+        updateResult(animated: true)
     }
     
     @IBAction func integrityRequirementValueChanged(_ sender: UISegmentedControl) {
         cvss.integrityRequirement = CVSS.IntegrityRequirement(rawValue: sender.selectedSegmentIndex - 1)
+        updateResult(animated: true)
     }
     
     @IBAction func availabilityRequirementValueChanged(_ sender: UISegmentedControl) {
         cvss.availabilityRequirement = CVSS.AvailabilityRequirement(rawValue: sender.selectedSegmentIndex - 1)
+        updateResult(animated: true)
     }
     
     @IBAction func modifiedAttackVectorValueChanged(_ sender: UISegmentedControl) {

@@ -8,6 +8,7 @@
 
 import UIKit
 import UICircularProgressRing
+import Toaster
 
 class ResultViewController: UIViewController, ResultDelegate {
     
@@ -20,6 +21,24 @@ class ResultViewController: UIViewController, ResultDelegate {
         super.viewDidLoad()
         
         setupScoreView()
+        setupDoubleTapHandler()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setupToasts()
+    }
+    
+    private func setupDoubleTapHandler() {
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(self.doubleTap))
+        doubleTap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(doubleTap)
+    }
+    
+    private func setupToasts() {
+        ToastView.appearance().bottomOffsetPortrait = (UIApplication.shared.keyWindow?.safeAreaInsets.bottom)! + 60
+        ToastView.appearance().bottomOffsetLandscape = (UIApplication.shared.keyWindow?.safeAreaInsets.bottom)! + 40
     }
     
     private func setupScoreView() {
@@ -41,5 +60,10 @@ class ResultViewController: UIViewController, ResultDelegate {
         scoreView.setProgress(to: CGFloat(score), duration: animated ? 0.4 : 0) {
             self.severityLabel.text = severity
         }
+    }
+    
+    @objc func doubleTap() {
+        ToastCenter.default.cancelAll()
+        Toast(text: "Copied!", duration: Delay.short).show()
     }
 }

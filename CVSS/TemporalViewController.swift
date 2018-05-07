@@ -37,6 +37,7 @@ class TemporalViewController: UIViewController {
         result?.update(
             score: score,
             severity: CVSS.Severity.fromScore(score).description,
+            vector: cvss.description,
             animated: animated
         )
     }
