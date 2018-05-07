@@ -8,7 +8,7 @@
 
 import UIKit
 import UICircularProgressRing
-import Toaster
+import StatusAlert
 
 class ResultViewController: UIViewController, ResultDelegate {
     
@@ -24,21 +24,10 @@ class ResultViewController: UIViewController, ResultDelegate {
         setupDoubleTapHandler()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        setupToasts()
-    }
-    
     private func setupDoubleTapHandler() {
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(self.doubleTap))
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
-    }
-    
-    private func setupToasts() {
-        ToastView.appearance().bottomOffsetPortrait = (UIApplication.shared.keyWindow?.safeAreaInsets.bottom)! + 60
-        ToastView.appearance().bottomOffsetLandscape = (UIApplication.shared.keyWindow?.safeAreaInsets.bottom)! + 40
     }
     
     private func setupScoreView() {
@@ -63,7 +52,18 @@ class ResultViewController: UIViewController, ResultDelegate {
     }
     
     @objc func doubleTap() {
-        ToastCenter.default.cancelAll()
-        Toast(text: "Copied!", duration: Delay.short).show()
+        let pasteBoard = UIPasteboard.general
+        pasteBoard.string = vector ?? ""
+        
+        let statusAlert = StatusAlert.instantiate(
+            withImage: UIImage(named: "check"),
+            title: "Copied",
+            message: "CVSS vector copied to the clipboard",
+            canBePickedOrDismissed: true)
+        
+        statusAlert.appearance.titleFont = UIFont(name: "SFCompactText-Bold", size: 20.0)!
+        statusAlert.appearance.messageFont = UIFont(name: "SFCompactText-Regular", size: 16.0)!
+
+        statusAlert.showInKeyWindow()
     }
 }

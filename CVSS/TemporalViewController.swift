@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TemporalViewController: UIViewController {
+class TemporalViewController: UIViewController, FormDelegate {
     
     @IBOutlet weak var exploitCodeMaturity: UISegmentedControl!
     @IBOutlet weak var remediationLevel: UISegmentedControl!
@@ -20,44 +20,76 @@ class TemporalViewController: UIViewController {
         }
     }
     
+    var previousScore: Float {
+        get {
+            switch (self.tabBarController as! TabBarViewController).previousSelectedItemIndex {
+            case 0:
+                return cvss.baseScore()
+            case 1:
+                return cvss.temporalScore()
+            case 2:
+                return cvss.enviromentalScore()
+            default:
+                return 0
+            }
+        }
+    }
+    
     var result: ResultDelegate?
     
-    override func viewDidAppear(_ animated: Bool) {
-        updateResult(animated: false)
+    override func viewWillAppear(_ animated: Bool) {
+        let score = previousScore
+        result?.update(
+            score: score,
+            severity: CVSS.Severity.fromScore(score).description,
+            vector: cvss.description,
+            animated: false
+        )
+        syncForm()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateResult()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ResultViewController {
             result = vc
         }
     }
     
-    private func updateResult(animated: Bool) {
+    func syncForm() {
+        exploitCodeMaturity.selectedSegmentIndex = (cvss.exploitCodeMaturity?.rawValue ?? -1) + 1
+        remediationLevel.selectedSegmentIndex = (cvss.remediationLevel?.rawValue ?? -1) + 1
+        reportConfidence.selectedSegmentIndex = (cvss.reportConfidence?.rawValue ?? -1) + 1
+    }
+    
+    func updateResult() {
         let score = cvss.temporalScore()
         result?.update(
             score: score,
             severity: CVSS.Severity.fromScore(score).description,
             vector: cvss.description,
-            animated: animated
+            animated: true
         )
     }
     
     @IBAction func exploitCodeMaturityValueChanged(_ sender: UISegmentedControl) {
         cvss.exploitCodeMaturity = CVSS.ExploitCodeMaturity(
-            rawValue: sender.selectedSegmentIndex - 1)!
-        updateResult(animated: true)
+            rawValue: sender.selectedSegmentIndex - 1)
+        updateResult()
     }
     
     @IBAction func remediationLevelValueChanged(_ sender: UISegmentedControl) {
         cvss.remediationLevel = CVSS.RemediationLevel(
-            rawValue: sender.selectedSegmentIndex - 1)!
-        updateResult(animated: true)
+            rawValue: sender.selectedSegmentIndex - 1)
+        updateResult()
     }
     
     @IBAction func reportConfidenceValueChanged(_ sender: UISegmentedControl) {
         cvss.reportConfidence = CVSS.ReportConfidence(
-            rawValue: sender.selectedSegmentIndex - 1)!
-        updateResult(animated: true)
+            rawValue: sender.selectedSegmentIndex - 1)
+        updateResult()
     }
 }
 

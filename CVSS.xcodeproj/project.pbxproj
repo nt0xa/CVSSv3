@@ -35,8 +35,9 @@
 		9C562BF82095D85600EAF473 /* SFCompactText-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BEC2095D85600EAF473 /* SFCompactText-LightItalic.otf */; };
 		9C562BF92095D85600EAF473 /* SFCompactText-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BED2095D85600EAF473 /* SFCompactText-HeavyItalic.otf */; };
 		9C562BFB2096452B00EAF473 /* ResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BFA2096452B00EAF473 /* ResultDelegate.swift */; };
-		9CF3401C209F971A00F6CE3C /* Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF3401B209F971A00F6CE3C /* Toaster.framework */; };
-		9CF3401D209F971A00F6CE3C /* Toaster.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF3401B209F971A00F6CE3C /* Toaster.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CF3401F20A05BB500F6CE3C /* StatusAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF3401E20A05BB500F6CE3C /* StatusAlert.framework */; };
+		9CF3402020A05BB500F6CE3C /* StatusAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF3401E20A05BB500F6CE3C /* StatusAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CF3402220A0750200F6CE3C /* FormDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF3402120A0750200F6CE3C /* FormDelegate.swift */; };
 		9CFC92CC209F34ED00E65E45 /* EnvironmentalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC92CB209F34ED00E65E45 /* EnvironmentalViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +66,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9C562BDD2095D57C00EAF473 /* UICircularProgressRing.framework in Embed Frameworks */,
-				9CF3401D209F971A00F6CE3C /* Toaster.framework in Embed Frameworks */,
+				9CF3402020A05BB500F6CE3C /* StatusAlert.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,7 +107,8 @@
 		9C562BEC2095D85600EAF473 /* SFCompactText-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-LightItalic.otf"; sourceTree = "<group>"; };
 		9C562BED2095D85600EAF473 /* SFCompactText-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-HeavyItalic.otf"; sourceTree = "<group>"; };
 		9C562BFA2096452B00EAF473 /* ResultDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDelegate.swift; sourceTree = "<group>"; };
-		9CF3401B209F971A00F6CE3C /* Toaster.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toaster.framework; path = Carthage/Build/iOS/Toaster.framework; sourceTree = "<group>"; };
+		9CF3401E20A05BB500F6CE3C /* StatusAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StatusAlert.framework; path = Carthage/Build/iOS/StatusAlert.framework; sourceTree = "<group>"; };
+		9CF3402120A0750200F6CE3C /* FormDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDelegate.swift; sourceTree = "<group>"; };
 		9CFC92CB209F34ED00E65E45 /* EnvironmentalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C562BDC2095D57C00EAF473 /* UICircularProgressRing.framework in Frameworks */,
-				9CF3401C209F971A00F6CE3C /* Toaster.framework in Frameworks */,
+				9CF3401F20A05BB500F6CE3C /* StatusAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +151,7 @@
 		9C562B952095098A00EAF473 = {
 			isa = PBXGroup;
 			children = (
-				9CF3401B209F971A00F6CE3C /* Toaster.framework */,
+				9CF3401E20A05BB500F6CE3C /* StatusAlert.framework */,
 				9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */,
 				9C562BA02095098A00EAF473 /* CVSS */,
 				9C562BB72095098B00EAF473 /* CVSSTests */,
@@ -173,9 +175,10 @@
 			children = (
 				9C562BDF2095D81D00EAF473 /* Resources */,
 				9C562BA12095098A00EAF473 /* AppDelegate.swift */,
+				9C562BFA2096452B00EAF473 /* ResultDelegate.swift */,
+				9CF3402120A0750200F6CE3C /* FormDelegate.swift */,
 				9C562BD12095C0F800EAF473 /* TabBarViewController.swift */,
 				9C562BD92095CB5100EAF473 /* ResultViewController.swift */,
-				9C562BFA2096452B00EAF473 /* ResultDelegate.swift */,
 				9C562BA32095098A00EAF473 /* BaseViewController.swift */,
 				9C562BA52095098A00EAF473 /* TemporalViewController.swift */,
 				9CFC92CB209F34ED00E65E45 /* EnvironmentalViewController.swift */,
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CF3402220A0750200F6CE3C /* FormDelegate.swift in Sources */,
 				9C562BD22095C0F800EAF473 /* TabBarViewController.swift in Sources */,
 				9C562BA62095098A00EAF473 /* TemporalViewController.swift in Sources */,
 				9C562BA22095098A00EAF473 /* AppDelegate.swift in Sources */,

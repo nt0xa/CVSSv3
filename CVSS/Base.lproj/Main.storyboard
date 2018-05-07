@@ -419,7 +419,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Temporal" image="temporal" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Temporal" image="temporal" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="exploitCodeMaturity" destination="nbK-aD-foQ" id="OQ1-5z-5jX"/>
                         <outlet property="remediationLevel" destination="Y8f-aR-jrh" id="c2n-Re-hDB"/>
@@ -438,10 +438,9 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.99215686274509807" green="0.19607843137254902" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -783,7 +782,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MTR-kt-LYn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Enviromental" image="environmental" id="dIN-n5-Kcf"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Enviromental" image="environmental" id="dIN-n5-Kcf"/>
                     <connections>
                         <outlet property="availabilityRequirement" destination="Xea-hd-DYd" id="kQk-Py-oWJ"/>
                         <outlet property="confidentialityRequirement" destination="Ta2-tO-dtX" id="Csg-4z-qr5"/>
@@ -852,13 +851,13 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="innerRingWidth">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
                                         <color key="value" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -895,6 +894,6 @@
         <image name="temporal" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gUR-L5-MhB"/>
+        <segue reference="wMf-mT-ESV"/>
     </inferredMetricsTieBreakers>
 </document>

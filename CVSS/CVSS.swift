@@ -884,6 +884,36 @@ class CVSS: CustomStringConvertible, Equatable {
         modifiedAvailability = ma
     }
     
+    func resetToDefaults() {
+        // Base
+        attackVector = .network
+        attackComplexity = .low
+        privilegeRequired = .none
+        userInteraction = .none
+        scope = .unchanged
+        confidentiality = .none
+        integrity = .none
+        availability = .none
+        
+        // Temporal
+        exploitCodeMaturity = nil
+        remediationLevel = nil
+        reportConfidence = nil
+        
+        // Environmental
+        confidentialityRequirement = nil
+        integrityRequirement = nil
+        availabilityRequirement = nil
+        modifiedAttackVector = nil
+        modifiedAttackComplexity = nil
+        modifiedPrivilegeRequired = nil
+        modifiedUserInteraction = nil
+        modifiedScope = nil
+        modifiedConfidentiality = nil
+        modifiedIntegrity = nil
+        modifiedAvailability = nil
+    }
+    
     private func iscBase(c: Float, i: Float, a: Float) -> Float {
         return 1 - (1 - c) * (1 - i) * (1 - a)
     }
