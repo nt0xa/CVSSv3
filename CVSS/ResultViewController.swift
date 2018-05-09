@@ -43,12 +43,16 @@ class ResultViewController: UIViewController, ResultDelegate {
         scoreView.gradientEndPosition = .bottomRight
     }
     
-    func update(score: Float, severity: String, vector: String, animated: Bool) {
+    func updateScore(_ score: Float, animated: Bool) {
+        scoreView.setProgress(to: CGFloat(score), duration: animated ? 0.4 : 0)
+    }
+    
+    func updateSevirity(_ severity: String) {
+        severityLabel.text = severity
+    }
+    
+    func updateVector(_ vector: String) {
         self.vector = vector
-        
-        scoreView.setProgress(to: CGFloat(score), duration: animated ? 0.4 : 0) {
-            self.severityLabel.text = severity
-        }
     }
     
     @objc func doubleTap() {

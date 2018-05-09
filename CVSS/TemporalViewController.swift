@@ -38,13 +38,7 @@ class TemporalViewController: UIViewController, FormDelegate {
     var result: ResultDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
-        let score = previousScore
-        result?.update(
-            score: score,
-            severity: CVSS.Severity.fromScore(score).description,
-            vector: cvss.description,
-            animated: false
-        )
+        updateResultWithPrevious()
         syncForm()
     }
     
@@ -64,14 +58,17 @@ class TemporalViewController: UIViewController, FormDelegate {
         reportConfidence.selectedSegmentIndex = (cvss.reportConfidence?.rawValue ?? -1) + 1
     }
     
+    func updateResultWithPrevious() {
+        let score = previousScore
+        result?.updateScore(score, animated: false)
+        result?.updateSevirity(CVSS.Severity.fromScore(score).description)
+    }
+    
     func updateResult() {
         let score = cvss.temporalScore()
-        result?.update(
-            score: score,
-            severity: CVSS.Severity.fromScore(score).description,
-            vector: cvss.description,
-            animated: true
-        )
+        result?.updateScore(score, animated: true)
+        result?.updateSevirity(CVSS.Severity.fromScore(score).description)
+        result?.updateVector(cvss.description)
     }
     
     @IBAction func exploitCodeMaturityValueChanged(_ sender: UISegmentedControl) {

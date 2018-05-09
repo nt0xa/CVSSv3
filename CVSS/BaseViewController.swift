@@ -44,13 +44,7 @@ class BaseViewController: UIViewController, FormDelegate {
     var result: ResultDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
-        let score = previousScore
-        result?.update(
-            score: score,
-            severity: CVSS.Severity.fromScore(score).description,
-            vector: cvss.description,
-            animated: false
-        )
+        updateResultWithPrevious()
         syncForm()
     }
     
@@ -75,14 +69,17 @@ class BaseViewController: UIViewController, FormDelegate {
         availavility.selectedSegmentIndex = cvss.availability.rawValue
     }
     
+    func updateResultWithPrevious() {
+        let score = previousScore
+        result?.updateScore(score, animated: false)
+        result?.updateSevirity(CVSS.Severity.fromScore(score).description)
+    }
+    
     func updateResult() {
         let score = cvss.baseScore()
-        result?.update(
-            score: score,
-            severity: CVSS.Severity.fromScore(score).description,
-            vector: cvss.description,
-            animated: true
-        )
+        result?.updateScore(score, animated: true)
+        result?.updateSevirity(CVSS.Severity.fromScore(score).description)
+        result?.updateVector(cvss.description)
     }
     
     @IBAction func attackVectorValueChanged(_ sender: UISegmentedControl) {

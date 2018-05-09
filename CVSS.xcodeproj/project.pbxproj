@@ -20,8 +20,6 @@
 		9C562BD22095C0F800EAF473 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BD12095C0F800EAF473 /* TabBarViewController.swift */; };
 		9C562BD42095C18A00EAF473 /* CVSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BD32095C18A00EAF473 /* CVSS.swift */; };
 		9C562BDA2095CB5100EAF473 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BD92095CB5100EAF473 /* ResultViewController.swift */; };
-		9C562BDC2095D57C00EAF473 /* UICircularProgressRing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */; };
-		9C562BDD2095D57C00EAF473 /* UICircularProgressRing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C562BDB2095D57C00EAF473 /* UICircularProgressRing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C562BEE2095D85600EAF473 /* SFCompactText-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE22095D85300EAF473 /* SFCompactText-RegularItalic.otf */; };
 		9C562BEF2095D85600EAF473 /* SFCompactText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE32095D85400EAF473 /* SFCompactText-Bold.otf */; };
 		9C562BF02095D85600EAF473 /* SFCompactText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BE42095D85400EAF473 /* SFCompactText-Semibold.otf */; };
@@ -35,8 +33,6 @@
 		9C562BF82095D85600EAF473 /* SFCompactText-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BEC2095D85600EAF473 /* SFCompactText-LightItalic.otf */; };
 		9C562BF92095D85600EAF473 /* SFCompactText-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C562BED2095D85600EAF473 /* SFCompactText-HeavyItalic.otf */; };
 		9C562BFB2096452B00EAF473 /* ResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C562BFA2096452B00EAF473 /* ResultDelegate.swift */; };
-		9CF3401F20A05BB500F6CE3C /* StatusAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF3401E20A05BB500F6CE3C /* StatusAlert.framework */; };
-		9CF3402020A05BB500F6CE3C /* StatusAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF3401E20A05BB500F6CE3C /* StatusAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CF3402220A0750200F6CE3C /* FormDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF3402120A0750200F6CE3C /* FormDelegate.swift */; };
 		9CFC92CC209F34ED00E65E45 /* EnvironmentalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC92CB209F34ED00E65E45 /* EnvironmentalViewController.swift */; };
 /* End PBXBuildFile section */
@@ -57,21 +53,6 @@
 			remoteInfo = CVSS;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9C562BDE2095D57C00EAF473 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9C562BDD2095D57C00EAF473 /* UICircularProgressRing.framework in Embed Frameworks */,
-				9CF3402020A05BB500F6CE3C /* StatusAlert.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9C1ACA36209F2485006EBD21 /* vectors-random.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "vectors-random.json"; sourceTree = "<group>"; };
@@ -117,8 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C562BDC2095D57C00EAF473 /* UICircularProgressRing.framework in Frameworks */,
-				9CF3401F20A05BB500F6CE3C /* StatusAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +234,7 @@
 				9C562B9A2095098A00EAF473 /* Sources */,
 				9C562B9B2095098A00EAF473 /* Frameworks */,
 				9C562B9C2095098A00EAF473 /* Resources */,
-				9C562BDE2095D57C00EAF473 /* Embed Frameworks */,
+				9CFA187E20A0AD7000F6B8D6 /* Copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,6 +364,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9CFA187E20A0AD7000F6B8D6 /* Copy frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/StatusAlert.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/UICircularProgressRing.framework",
+			);
+			name = "Copy frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/StatusAlert.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/UICircularProgressRing.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C562B9A2095098A00EAF473 /* Sources */ = {
@@ -572,7 +572,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8N7UU45L6B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -583,10 +584,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.russtone.CVSS;
+				PRODUCT_BUNDLE_IDENTIFIER = io.russtone.cvss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3026e1b1-7116-4c4b-95e9-a5f5159b09ab";
+				PROVISIONING_PROFILE_SPECIFIER = "CVSS-dev";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -594,7 +597,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8N7UU45L6B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -605,10 +609,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.russtone.CVSS;
+				PRODUCT_BUNDLE_IDENTIFIER = io.russtone.cvss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "759a5dff-ecf9-4aab-9cd4-7692c85e4165";
+				PROVISIONING_PROFILE_SPECIFIER = CVSS;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

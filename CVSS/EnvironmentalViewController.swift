@@ -47,13 +47,7 @@ class EnvironmentalViewController: UIViewController, FormDelegate {
     var result: ResultDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
-        let score = previousScore
-        result?.update(
-            score: score,
-            severity: CVSS.Severity.fromScore(score).description,
-            vector: cvss.description,
-            animated: false
-        )
+        updateResultWithPrevious()
         syncForm()
     }
     
@@ -81,14 +75,17 @@ class EnvironmentalViewController: UIViewController, FormDelegate {
         modifiedAvailavility.selectedSegmentIndex = (cvss.modifiedAvailability?.rawValue ?? -1) + 1
     }
     
+    func updateResultWithPrevious() {
+        let score = previousScore
+        result?.updateScore(score, animated: false)
+        result?.updateSevirity(CVSS.Severity.fromScore(score).description)
+    }
+    
     func updateResult() {
         let score = cvss.enviromentalScore()
-        result?.update(
-            score: score,
-            severity: CVSS.Severity.fromScore(score).description,
-            vector: cvss.description,
-            animated: true
-        )
+        result?.updateScore(score, animated: true)
+        result?.updateSevirity(CVSS.Severity.fromScore(score).description)
+        result?.updateVector(cvss.description)
     }
     
     @IBAction func confidentialityRequirementValueChanged(_ sender: UISegmentedControl) {
