@@ -8,7 +8,9 @@ cache:
 before_install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
-  - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
+  - carthage checkout
+  - rm -rf Carthage/Checkouts/UICircularProgressRing/Example
+  - carthage build --platform iOS --no-use-binaries --cache-builds --verbose
   
 script:
   - xcodebuild -scheme CVSS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.3' build test
