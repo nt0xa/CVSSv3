@@ -1,9 +1,9 @@
 language: objective-c
 osx_image: xcode9.3
 
-cache:
-  directories:
-    - Carthage
+#cache:
+#  directories:
+#    - Carthage
 
 before_install:
   - brew update
