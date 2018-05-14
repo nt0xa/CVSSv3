@@ -2,6 +2,10 @@
 
 This is an open source app made for easy [CVSS v3.0](https://www.first.org/cvss/) calculation.
 
+<a href="https://itunes.apple.com/us/app/cvssv3/id1381447906?mt=8">
+  <img src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg" />
+</a>
+
 ## Features
 
 - Allows to calculate base, temporal and environment scores
